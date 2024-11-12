@@ -28,7 +28,7 @@ cat <<EOF > "$CONFIG_PATH"
       "listen_port": $SERVER_PORT,
       "users": [
         {
-          "uuid": "$UUID"，
+          "uuid": "$UUID",
           "flow": "xtls-rprx-vision"
         }
       ],
