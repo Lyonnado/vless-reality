@@ -14,7 +14,7 @@ PRIVATE_KEY=$(echo "$KEY_PAIR" | grep "PrivateKey" | awk '{print $2}')
 PUBLIC_KEY=$(echo "$KEY_PAIR" | grep "PublicKey" | awk '{print $2}')
 
 # 获取本机 IP 和主机名
-SERVER_IP=$(curl -s ifconfig.me)  # 使用 ifconfig.me 获取本机 IP，可以替换为其他 IP 获取服务
+SERVER_IP=$(curl -4 -s ifconfig.me)  # 使用 ifconfig.me 获取本机 IP，可以替换为其他 IP 获取服务
 SERVER_NAME=$(hostname)           # 获取 VPS 的主机名
 
 # 创建 VLESS Reality 配置文件并写入到 singbox 配置路径
