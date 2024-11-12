@@ -22,11 +22,14 @@ cat <<EOF > "$CONFIG_PATH"
   "inbounds": [
     {
       "type": "vless",
+      "sniff": true,
+      "sniff_override_destination": true,
       "listen": "::",
       "listen_port": $SERVER_PORT,
       "users": [
         {
-          "uuid": "$UUID"
+          "uuid": "$UUID"，
+          "flow": "xtls-rprx-vision"
         }
       ],
       "tls": {
@@ -39,8 +42,7 @@ cat <<EOF > "$CONFIG_PATH"
             "server_port": 443
           },
           "private_key": "$PRIVATE_KEY",
-          "public_key": "$PUBLIC_KEY",
-          "short_ids": [
+          "short_id": [
             "$SHORT_ID"
           ]
         }
@@ -61,4 +63,3 @@ echo "UUID: $UUID"
 echo "端口: $SERVER_PORT"
 echo "Reality Short ID: $SHORT_ID"
 echo "Reality 公钥: $PUBLIC_KEY"
-echo "Reality 私钥: $PRIVATE_KEY"
