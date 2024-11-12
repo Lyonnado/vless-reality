@@ -9,7 +9,7 @@ SERVER_PORT=$((RANDOM % 55536 + 10000)) # 自动生成一个大于 10000 且小�
 SHORT_ID=$(openssl rand -hex 4)         # 生成 Reality 的 Short ID (4字符HEX格式)
 
 # 生成 Reality 公私钥对
-KEY_PAIR=$(singbox generate reality-keypair) # 生成 Reality 公私钥对
+KEY_PAIR=$(sing-box generate reality-keypair) # 生成 Reality 公私钥对
 PRIVATE_KEY=$(echo "$KEY_PAIR" | grep "PrivateKey" | awk '{print $2}')
 PUBLIC_KEY=$(echo "$KEY_PAIR" | grep "PublicKey" | awk '{print $2}')
 
